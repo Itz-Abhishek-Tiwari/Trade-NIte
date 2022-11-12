@@ -545,6 +545,71 @@ form.search button:hover {
   line-height: 16px;
   margin: 0 0.5em 0.5em 0;
 }
+
+/* Slider */
+/* .slider > div > .wrapper {
+  width: calc(100% - (300px + 2em));
+  margin-left: auto;
+} */
+.slider .item {
+  position: relative;
+  height: 474px;
+}
+.slider .item::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 450px;
+  height: 300px;
+  background-color: var(--white-color);
+  z-index: 1;
+  filter: blur(50px);
+  opacity: 0.8;
+}
+.slider .text-content {
+  position: relative;
+  height: var(--percent100);
+  justify-content: flex-end;
+  padding: 0 0 10% 10%;
+  z-index: 1;
+}
+.slider h4 {
+  font-size: var(--font-small);
+  font-weight: var(--fw7);
+  width: fit-content;
+  padding: 4px 10px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: 4px;
+}
+.text-content :where(h2, h3) span:first-child {
+  font-weight: var(--fw3);
+  columns: var(--light-text-color);
+}
+.text-content :where(h2, h3) span:last-child {
+  color: var(--secondary-dark-color);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--secondary-dark-color);
+}
+/* .brands */
+
+.brands .wrapper {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2em 0;
+}
+.brands .item img {
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+.brands.item a:hover img {
+  opacity: 1;
+}
+
 /* last line of css */
 @media screen and (min-width: 992px) {
   .container {
@@ -710,5 +775,10 @@ form.search button:hover {
   }
   .dpt-menu .has-child:hover .mega {
     display: flex;
+  }
+  /* slider */
+  .slider > div > .wrapper {
+    width: calc(100% - (300px + 2em));
+    margin-left: auto;
   }
 }

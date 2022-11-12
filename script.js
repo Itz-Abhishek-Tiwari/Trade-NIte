@@ -23,6 +23,8 @@ menuButton.addEventListener("click", function () {
 closeButton.addEventListener("click", function () {
   addclass.classList.remove("showmenu");
 });
+
+// show sub menu mobile
 const submenu = document.querySelectorAll(".has-child .icon-small");
 submenu.forEach((menu) => menu.addEventListener("click", toggle));
 
@@ -34,3 +36,12 @@ function toggle(e) {
   if (this.closest(".has-child").classList != "expand")
     this.closest(".has-child").classList.toggle("expand");
 }
+
+// slider with swiperjs
+const swiper = new Swiper(".swiper", {
+  loop: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
