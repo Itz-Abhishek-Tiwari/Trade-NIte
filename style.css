@@ -897,7 +897,7 @@ form.search button:hover {
     font-size: 2em;
     font-weight: var(--fw8);
     text-align: center;
-    color: var(--secondary-dark-color);
+    color: var(--white-color);
   }
   .header-main .right {
     max-width: 600px;
