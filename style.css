@@ -733,7 +733,7 @@ form.search button:hover {
   height: 20px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z' fill='rgba(241,196,14,1)'/%3E%3C/svg%3E");
   background-position-y: top;
-  background-repeat-y: no-repeat;
+  background-repeat: repeat space;
 }
 .products h3 {
   font-family: "Rubik";
@@ -775,7 +775,15 @@ form.search button:hover {
   display: flex;
   position: relative;
 }
+.products .stock-danger {
+  color: var(--primary-color);
+}
 
+.flexwrap .row {
+  flex: 0 0 100%;
+  width: 100%;
+  margin-bottom: 2em;
+}
 /* big product */
 .products.big .item {
   flex-direction: column;
@@ -805,6 +813,9 @@ form.search button:hover {
 @media screen and (min-width: 768px) {
   .products .price .current {
     font-size: 1.25em;
+  }
+  .products.mini {
+    flex: 0 0 50%;
   }
 }
 
