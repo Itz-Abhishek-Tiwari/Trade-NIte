@@ -809,13 +809,32 @@ form.search button:hover {
 .products:where(.mini, .main) h3 {
   font-weight: 400;
 }
+
+/* main-product = 01 */
+.products.main .item {
+  flex-direction: column;
+  flex: 0 0 100%;
+  padding: 0 0.938em;
+  padding-bottom: 2em;
+}
+.products.main .media {
+  height: 390px;
+}
 /* responsive */
+@media screen and (min-width: 481px) {
+  .products.main .item {
+    flex: 0 0 50%;
+  }
+}
 @media screen and (min-width: 768px) {
   .products .price .current {
     font-size: 1.25em;
   }
   .products.mini {
     flex: 0 0 50%;
+  }
+  .products.main .item {
+    flex: 0 0 33.3333%;
   }
 }
 
