@@ -255,6 +255,7 @@ h4 {
 }
 .header-top li:hover ul {
   display: block;
+  padding: 0.25em 1em 0.25em 1em;
 }
 
 /* header nav */
@@ -263,7 +264,7 @@ h4 {
   margin-bottom: 1.5em;
   border-bottom: 1px solid var(--border-color);
 }
-.trigger {
+.header-nav .ri-moon-line .trigger {
   font-size: 1.5em;
   display: flex;
   padding: 00.25em;
@@ -609,7 +610,12 @@ form.search button:hover {
 .brands.item a:hover img {
   opacity: 1;
 }
-
+.brands .sectop {
+  justify-content: space-between;
+  padding-top: 1.5em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid var(--border-color);
+}
 /* product grid-01*/
 
 .sectop {
@@ -1021,10 +1027,152 @@ form.search button:hover {
   margin-right: -20px;
   background-color: var(--secondary-dark-color);
 }
+
+/* search bottom */
+
+.search-bottom {
+  position: fixed;
+  bottom: 60px;
+  width: var(--percent100);
+  padding: 2.5em 0;
+  background-color: var(--secondary-dark-color);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  will-change: visibility, opacity;
+}
+.showsearch .search-bottom {
+  visibility: inherit;
+  opacity: 1;
+}
+.search-bottom .t-close {
+  position: absolute;
+  top: -54px;
+  right: 0;
+}
+.search-bottom .t-close:hover {
+  background-color: var(--primary-color);
+}
+
+/* overlay */
+
+.overlay {
+  position: fixed;
+  width: var(--percent100);
+  height: var(--percent100);
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+}
+.showmenu .overlay {
+  opacity: 1;
+  visibility: inherit;
+}
+
+/* page single */
+/* department menu */
+.page-home .dpt-cat .dpt-trigger,
+.dpt-trigger .ri-close-line,
+.showdpt .dpt-trigger .ri-menu-3-line {
+  display: none;
+}
+.showdpt .dpt-trigger .ri-close-line {
+  display: block;
+}
+
+/* breadcurb */
+.breadcurmb {
+  font-size: var(--font-small);
+  margin-bottom: 2em;
+}
+.breadcurmb li:not(:last-child)::after {
+  content: "/";
+  padding: 0 0.35em;
+}
+.breadcurmb li:last-child {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--light-text-color);
+}
+
+/* product details */
+.products.one .item {
+  flex-direction: column;
+}
+.products.one .price .discount {
+  font-size: 1em;
+  font-weight: var(--fw7);
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  padding: 1em;
+  z-index: 2;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: var(--percent50);
+  margin: 0.5em;
+}
+.products.one :where(.big-image, .small-image) {
+  overflow: hidden;
+}
+.products.one .big-image {
+  position: relative;
+  margin-bottom: 1em;
+}
+.products.one :where(.big-image, .small-image) img {
+  object-fit: cover;
+  width: var(--percent100);
+  height: var(--percent100);
+  display: block;
+}
+
+.products.one .thumbnail-show {
+  position: relative;
+  width: 130px;
+  height: 110px;
+  overflow: hidden;
+  margin: 0 2em 2em 0;
+}
+.products :is(.swiper-button-next, .swiper-button-prev) {
+  outline: 0;
+  color: var(--secondary-dark-color);
+  transition: var(--trans-background), transform 0.3s;
+}
+.products .big-image:hover .swiper-button-next {
+  transform: translateX(10px);
+}
+.products .big-image:hover .swiper-button-prev {
+  transform: translateX(-10px);
+}
+.products :is(.swiper-button-next, .swiper-button-prev)::after {
+  font-size: 1.5em;
+}
+.products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
+  background-color: var(--light-bg-color);
+}
+
+/* lightbox */
+
 /* responsive */
 @media screen and (min-width: 481px) {
   .products.main .item {
     flex: 0 0 50%;
+  }
+  /* page single */
+  .products.one .big-image {
+    margin-bottom: 2em;
+  }
+  .products.one .image-show {
+    height: 680px;
+  }
+  .products.one .thumbnail-show {
+    height: 160px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1038,6 +1186,10 @@ form.search button:hover {
   }
   .products.main .item {
     flex: 0 0 33.3333%;
+  }
+  .products.one .row {
+    flex: 0 0 50%;
+    width: 50%;
   }
 }
 
@@ -1231,5 +1383,13 @@ form.search button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  /* page single */
+  #page:not(.page-home) .dpt-menu {
+    display: none;
+  }
+  #page.showdpt .dpt-menu {
+    display: block;
   }
 }

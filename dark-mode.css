@@ -1,0 +1,30 @@
+.swatch_1 {
+  background: #e3e7eb;
+}
+.swatch_2 {
+  background: #bcc3cb;
+}
+.swatch_3 {
+  background: #7c828f;
+}
+.swatch_4 {
+  background: #3f3e40;
+}
+.swatch_5 {
+  background: #4db1dd;
+}
+.swatch_6 {
+  background: #3e51c2;
+}
+
+:root {
+  --primary-color: #8d9eff;
+  --secondary-color: #4473e2;
+  --secondary-dark-color: #474e68;
+
+  --white-color: #ffffff; /*background hader and medddile secation*/
+  --light-bg-color: #f2f3f5; /*near circle and more info*/
+  --light-text-color: #7c899a;
+  --border-color: #e5e8ec;
+  --dark-color: #3c4048;
+}
